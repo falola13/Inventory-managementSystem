@@ -15,18 +15,24 @@ export default function SidebarDropdownLink({ title, items, icon: Icon }) {
     setIsOpen(!isOpen);
   };
   return (
-    <Collapsible className="relative">
+    <Collapsible>
       <CollapsibleTrigger
         onClick={handleToggle}
-        className="p-2 flex items-center justify-between space-x-2 "
+        className=" flex items-center justify-between  w-full "
       >
-        <Icon className={`w-4 h-4 ${isOpen ? "text-blue-600" : ""}`} />{" "}
-        <span className={isOpen ? "text-blue-600" : ""}>{title}</span>{" "}
-        <div className="absolute top-3 right-2">
+        <div className="flex p-2 items-center space-x-2">
+          <Icon className={`w-4 h-4 ${isOpen ? "text-blue-600" : ""}`} />{" "}
+          <span className={isOpen ? "text-blue-600" : ""}>{title}</span>{" "}
+        </div>
+        <div className="">
           {isOpen ? (
-            <GoTriangleDown className="w-4 h-4 text-blue-600" />
+            <GoTriangleDown
+              className={`w-4 h-4 ${isOpen ? "text-blue-600" : "text-white"}`}
+            />
           ) : (
-            <GoTriangleRight className="w-4 h-4 text-blue-600" />
+            <GoTriangleRight
+              className={`w-4 h-4 ${isOpen ? "text-blue-600" : "text-white"}`}
+            />
           )}
         </div>
       </CollapsibleTrigger>

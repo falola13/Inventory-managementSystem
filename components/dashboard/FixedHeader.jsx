@@ -8,14 +8,14 @@ import {
 import Link from "next/link";
 import React from "react";
 
-export default function FixedHeader() {
+export default function FixedHeader({ newLink }) {
   return (
     <div className="flex justify-between items-center bg-white py-5 px-4">
       <button className="text-2xl">All Items</button>
       <div className="flex gap-4">
         {/* New */}
         <Link
-          href="#"
+          href={newLink}
           className="p-1 rounded-sm bg-blue-600 px-3 flex items-center space-x-2 text-white"
         >
           <Plus className=" w-4 h-4 " />

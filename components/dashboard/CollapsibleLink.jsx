@@ -10,7 +10,7 @@ export default function CollapsibleLink({ item }) {
       href={item.href}
     >
       <span className="text-sm">{item.title}</span>
-      <FaPlusCircle className="w-4 h-4 text-blue-600" />
+      <FaPlusCircle className="w-4 h-4 text-white" />
       {/* <CirclePlus className="w-4 h-4 text-white" /> */}
     </Link>
   );

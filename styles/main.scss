@@ -76,19 +76,31 @@
 }
 
 .one-bg {
-  background-image: url("/one.png");
+  background-image: url("/one.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
 }
 .two-bg {
-  background-image: url("/two.png");
+  background-image: url("/two.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
 }
 .three-bg {
-  background-image: url("/three.png");
+  background-image: url("/three.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+.composite-bg {
+  background-image: url("/composite.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+.price-bg {
+  background-image: url("/price.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
