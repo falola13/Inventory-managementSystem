@@ -1,6 +1,7 @@
 import { CirclePlus, PlusCircle } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { FaPlusCircle } from "react-icons/fa";
 
 export default function CollapsibleLink({ item }) {
   return (
@@ -9,7 +10,8 @@ export default function CollapsibleLink({ item }) {
       href={item.href}
     >
       <span className="text-sm">{item.title}</span>
-      <CirclePlus className="w-4 h-4 text-white" />
+      <FaPlusCircle className="w-4 h-4 text-blue-600" />
+      {/* <CirclePlus className="w-4 h-4 text-white" /> */}
     </Link>
   );
 }

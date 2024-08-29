@@ -13,7 +13,7 @@ export default function Inventory() {
       link: "/new",
       linkTitle: "New Item",
       enabled: true,
-      icon: Shirt,
+      icon: "two-bg",
     },
     {
       title: "Items",
@@ -21,7 +21,7 @@ export default function Inventory() {
       link: "/new",
       linkTitle: "New Item",
       enabled: true,
-      icon: Shirt,
+      icon: "one-bg",
     },
     {
       title: "Composite Items",
@@ -30,7 +30,7 @@ export default function Inventory() {
       link: "/new",
       linkTitle: "New Item",
       enabled: true,
-      icon: Shirt,
+      icon: "three-bg",
     },
     {
       title: "Price Lists",
@@ -39,7 +39,7 @@ export default function Inventory() {
       link: "/new",
       linkTitle: "New Item",
       enabled: true,
-      icon: Shirt,
+      icon: "two-bg",
     },
   ];
   return (

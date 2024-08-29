@@ -67,3 +67,29 @@
     @apply bg-background text-foreground;
   }
 }
+
+.header-bg {
+  background-image: url("/header-bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.one-bg {
+  background-image: url("/one.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+.two-bg {
+  background-image: url("/two.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+.three-bg {
+  background-image: url("/three.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}

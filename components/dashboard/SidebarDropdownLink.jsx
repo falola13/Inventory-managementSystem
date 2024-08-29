@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { GoTriangleDown, GoTriangleRight } from "react-icons/go";
 import {
   Collapsible,
   CollapsibleContent,
@@ -23,9 +24,9 @@ export default function SidebarDropdownLink({ title, items, icon: Icon }) {
         <span className={isOpen ? "text-blue-600" : ""}>{title}</span>{" "}
         <div className="absolute top-3 right-2">
           {isOpen ? (
-            <TriangleRight className="w-5 h-5 text-blue-600" />
+            <GoTriangleDown className="w-4 h-4 text-blue-600" />
           ) : (
-            <Play className="w-4 h-4 text-blue-600" />
+            <GoTriangleRight className="w-4 h-4 text-blue-600" />
           )}
         </div>
       </CollapsibleTrigger>

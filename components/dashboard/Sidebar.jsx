@@ -16,6 +16,8 @@ import React from "react";
 import SubscriptionCard from "./SubscriptionCard";
 import CollapsibleLink from "./CollapsibleLink";
 import SidebarDropdownLink from "./SidebarDropdownLink";
+import { RiShoppingCart2Fill } from "react-icons/ri";
+import { BsCartCheckFill, BsBasket3Fill } from "react-icons/bs";
 
 export default function Sidebar() {
   const inventoryLinks = [
@@ -80,7 +82,8 @@ export default function Sidebar() {
             href="/dashboard/home"
             className="bg-slate-950 flex space-x-2 items-center py-3 px-2"
           >
-            <ShoppingCart />
+            <RiShoppingCart2Fill className="w-5 h-5 text-blue-400" />
+            {/* <ShoppingCart /> */}
             <span className="text-xl  font-semibold">EasyInventory</span>
             {/* Links */}
           </Link>
@@ -94,13 +97,13 @@ export default function Sidebar() {
             <SidebarDropdownLink
               items={inventoryLinks}
               title="Inventory"
-              icon={BaggageClaim}
+              icon={BsCartCheckFill}
             />
 
             <SidebarDropdownLink
               items={salesLinks}
               title="Sales"
-              icon={ShoppingBasket}
+              icon={BsBasket3Fill}
             />
 
             <button className="p-2 flex items-center space-x-2">
