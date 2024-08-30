@@ -1,87 +1,60 @@
 "use client";
+import AddInventoryForm from "@/components/dashboard/AddInventoryForm";
 import FormHeader from "@/components/dashboard/FormHeader";
-import SelectInput from "@/components/FormInputs/SelectInput";
-import SubmitButton from "@/components/FormInputs/SubmitButton";
-import TextareaInput from "@/components/FormInputs/TextareaInput";
-import TextInputs from "@/components/FormInputs/TextInputs";
-import { Plus } from "lucide-react";
+import TransferInventoryForm from "@/components/dashboard/TransferInverntoryForm";
+import { Minus, Plus } from "lucide-react";
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
 
-export default function NewAdjustments() {
-  const branches = [
+export default function NewAdjustment() {
+  const tabs = [
     {
-      label: "Branch A",
-      value: "6558790",
+      title: "Add Stock",
+      icon: Plus,
+      form: "add",
     },
     {
-      label: "Branch B",
-      value: "85467587",
+      title: "Transfer Stock",
+      icon: Minus,
+      form: "transfer",
     },
   ];
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
-  const [loading, setLoading] = useState(false);
-  async function onSubmit(data) {
-    console.log(data);
-    setLoading(true);
-    const baseUrl = "http://localhost:3000";
-    try {
-      const response = await fetch(`${baseUrl}/api/adjustments`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      if (response.ok) {
-        console.log(response);
-        setLoading(false);
-        reset();
-      }
-    } catch (error) {
-      setLoading(false);
-      console.log(error);
-    }
-  }
+  const [activeForm, setActiveForm] = useState("add");
   return (
     <div>
       {/* Header */}
-      <FormHeader title="New Adjustments" href="/dashboard/inventory" />
+      <FormHeader title="New Adjustment" href="/dashboard/inventory" />
       {/* Form */}
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="w-full max-w-4xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto my-3"
-      >
-        <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
-          <TextInputs
-            type="number"
-            label="Enter Amount of Stock Transfer"
-            name="transferStockQty"
-            register={register}
-            errors={errors}
-            className="w-full"
-          />
-          <SelectInput
-            name="recievingBranchId"
-            label="Select the Branch that will receive the Stock"
-            register={register}
-            className="w-full"
-            options={branches}
-          />
-          <TextareaInput
-            label="Adjustment Note"
-            name="notes"
-            register={register}
-            errors={errors}
-          />
-        </div>
-        <SubmitButton isLoading={loading} title="Adjustment" />
-      </form>
+
+      <div className="border-b  w-full max-w-4xl px-4 py-2 bg-white border border-gray-200    dark:border-gray-700 mx-auto my-4 shadow rounded">
+        <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+          {tabs.map((tab, i) => {
+            const Icon = tab.icon;
+            return (
+              <li className="me-2" key={i}>
+                <button
+                  onClick={() => setActiveForm(tab.form)}
+                  className={`${
+                    activeForm === tab.form
+                      ? "inline-flex items-center justify-center p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500 group"
+                      : "inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300  group"
+                  }`}
+                >
+                  <Icon
+                    className={` ${
+                      activeForm === tab.form
+                        ? "w-4 h-4 me-2 text-blue-600 dark:text-blue-500"
+                        : "w-4 h-4 me-2 text-gray-400 group-hover:text-gray-500"
+                    }`}
+                  />
+                  {tab.title}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      {activeForm === "add" ? <AddInventoryForm /> : <TransferInventoryForm />}
     </div>
   );
 }

@@ -16,7 +16,7 @@ export default function OptionCard({ optionData }) {
   return (
     <div className="shadow-md bg-white flex flex-col items-center justify-center gap-4 p-6 rounded">
       <h2 className="text-xl font-semibold">{title}</h2>
-      <div className={`w-40 h-40 ${Icon}`}>
+      <div className={`w-32 h-32 ${Icon}`}>
         {/* <Icon strokeWidth=".5px" className="w-36 h-36" /> */}
       </div>
       <p className="line-clamp-1">{description}</p>

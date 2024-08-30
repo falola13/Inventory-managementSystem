@@ -51,7 +51,7 @@ export default function Inventory() {
       icon: "two-bg",
     },
     {
-      title: "Inventory Adjustments",
+      title: "Inventory Adjustment",
       description: "Transfer stock from the main Warehouse",
       link: "/dashboard/inventory/adjustments/new",
       linkTitle: "New Adjustemnt",
@@ -62,7 +62,7 @@ export default function Inventory() {
   return (
     <div>
       <FixedHeader newLink="/dashboard/inventory/items/new" />
-      <div className="grid grid-col-1 lg:grid-cols-2 px-16 py-8 gap-6">
+      <div className="grid grid-col-1 lg:grid-cols-3 md:grid-cols-2 px-16 py-8 gap-6">
         {optionCards.map((card, i) => {
           return <OptionCard optionData={card} key={i} />;
         })}
