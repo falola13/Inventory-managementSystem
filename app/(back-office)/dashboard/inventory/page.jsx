@@ -38,7 +38,7 @@ export default function Inventory() {
       link: "/dashboard/inventory/warehouse/new",
       linkTitle: "New Warehouse",
       enabled: true,
-      icon: "price-bg",
+      icon: "composite-bg",
     },
     {
       title: "Units",
@@ -47,7 +47,15 @@ export default function Inventory() {
       link: "/dashboard/inventory/units/new",
       linkTitle: "New Unit",
       enabled: true,
-      icon: "price-bg",
+      icon: "two-bg",
+    },
+    {
+      title: "Inventory Adjustments",
+      description: "Transfer stock from the main Warehouse",
+      link: "/dashboard/inventory/adjustments/new",
+      linkTitle: "New Adjustemnt",
+      enabled: true,
+      icon: "two-bg",
     },
   ];
   return (
