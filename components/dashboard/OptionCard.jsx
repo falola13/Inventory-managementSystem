@@ -11,6 +11,7 @@ export default function OptionCard({ optionData }) {
     linkTitle,
     enabled,
     icon: Icon,
+    logo = "",
   } = optionData;
   return (
     <div className="shadow-md bg-white flex flex-col items-center justify-center gap-4 p-6 rounded">

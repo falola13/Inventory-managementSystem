@@ -1,6 +1,7 @@
+"use client";
 import FixedHeader from "@/components/dashboard/FixedHeader";
 import OptionCard from "@/components/dashboard/OptionCard";
-import { Shirt } from "lucide-react";
+import { Medal, Shirt } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -29,7 +30,7 @@ export default function Inventory() {
       link: "/dashboard/inventory/brands/new",
       linkTitle: "New Brand",
       enabled: true,
-      icon: "price-bg",
+      icon: "pricetag-bg",
     },
     {
       title: "Warehouse",
