@@ -51,6 +51,15 @@ export default function Inventory() {
       icon: "two-bg",
     },
     {
+      title: "Suppliers",
+      description:
+        "Tweak your item prices for specific contacts or transactions",
+      link: "/dashboard/inventory/supplier/new",
+      linkTitle: "New Supplier",
+      enabled: true,
+      icon: "composite-bg",
+    },
+    {
       title: "Inventory Adjustment",
       description: "Transfer stock from the main Warehouse",
       link: "/dashboard/inventory/adjustments/new",
